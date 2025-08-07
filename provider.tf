@@ -4,6 +4,13 @@ terraform {
       source = "hashicorp/azurerm"
       version = "4.38.1"
     }
+    
+  }
+  backend "azurerm" {
+    resource_group_name   = "new-rg"   
+    storage_account_name  = "abhaystoragepipeline"
+    container_name        = "pipeline-container"
+    key                   = "terraform.tfstate"
   }
 }
 
